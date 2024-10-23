@@ -7,7 +7,6 @@ const TodoHome = () => {
       style={{
         width: "100vw",
         height: "100vh",
-        fontFamily: "DyslexicFont",
         display: "flex",
         flexDirection: "column",
       }}

@@ -3,7 +3,6 @@ const CompletedList = () => {
     <div
       style={{
         width: "50%",
-        height: "100%",
       }}
     ></div>
   );

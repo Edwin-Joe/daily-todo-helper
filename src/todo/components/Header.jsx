@@ -17,7 +17,7 @@ const Header = () => {
           color: PALLETTE.PINK,
         }}
       >
-        Daily to-do-helper
+        To-do-helper
       </text>
     </div>
   );

@@ -6,7 +6,7 @@ export enum PALLETTE {
 }
 
 export enum FONT_SIZES {
-    HEADER=46,
+    HEADER=42,
     LABEL=30,
     TITLE=38,
 }

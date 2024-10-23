@@ -5,16 +5,41 @@ const TodoList = () => {
     <div
       style={{
         width: "50%",
-        height: "100%",
-        borderRight: `4px solid ${PALLETTE.DARK_PURPLE}`,
-        borderRadius: "10px",
+        height: "auto",
         display: "flex",
         justifyContent: "center",
+        alignItems: "flex-start",
+        paddingTop: "60px",
       }}
     >
-      <div style={{ flexDirection: "row" }}>
-        <input type="text" />
-        <button>Add</button>
+      <div
+        style={{
+          flexDirection: "row",
+          display: "flex",
+          alignItems: "center",
+          height: "auto",
+          gap: "8px",
+        }}
+      >
+        <input
+          type="text"
+          style={{
+            borderRadius: "20px",
+            height: "60px",
+            width: "450px",
+            backgroundColor: PALLETTE.LIGHT_PURPLE,
+          }}
+        />
+        <button
+          style={{
+            borderRadius: "20px",
+            height: "66px",
+            width: "75px",
+            backgroundColor: PALLETTE.DARK_PURPLE,
+          }}
+        >
+          <span style={{ fontSize: 32, color: PALLETTE.PINK }}>Add</span>
+        </button>
       </div>
     </div>
   );
