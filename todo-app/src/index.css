@@ -1,0 +1,19 @@
+
+@font-face {
+  font-family: 'DyslexicFont';
+  src: url('./assets/fonts/OpenDyslexic-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'DyslexicFont', sans-serif;
+}
+
+code {
+  font-family: 'DyslexicFont', sans-serif;
+}
+
