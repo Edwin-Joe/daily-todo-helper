@@ -1,4 +1,4 @@
-const CompletedList = () => {
+const CompletedList = ({ data, setData }) => {
   return (
     <div
       style={{

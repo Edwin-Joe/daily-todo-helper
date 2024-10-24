@@ -1,8 +1,9 @@
-import { PALLETTE } from "../utils/utils.ts";
-import CompletedList from "./CompletedList.jsx";
-import TodoList from "./TodoList.jsx";
+import { useState } from "react";
+import { getTodos, PALLETTE } from "../utils/utils.ts";
+import TodoList from "./lists/TodoList.jsx";
 
 const PageBody = () => {
+  const [data, setData] = useState(getTodos());
   return (
     <div
       style={{
@@ -12,8 +13,7 @@ const PageBody = () => {
         flexDirection: "row",
       }}
     >
-      <TodoList />
-      <CompletedList />
+      <TodoList data={data} setData={setData} />
     </div>
   );
 };
