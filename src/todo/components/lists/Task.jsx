@@ -42,6 +42,8 @@ const Task = ({ data, setData, label, isCompleted, id }) => {
             fontFamily: "sans-serif",
             textAlign: "center",
             flex: 1,
+            wordBreak: "break-word",
+            overflowWrap: "break-word",
           }}
         >
           {label}
