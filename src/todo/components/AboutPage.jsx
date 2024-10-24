@@ -59,6 +59,15 @@ const AboutPage = ({ setShowAbout }) => {
         }}
       >
         <a href="https://www.linkedin.com/in/edwin-joe-xavier/">My Linkedin</a>
+      </div>
+      <div
+        style={{
+          textAlign: "center",
+          marginBottom: "20px",
+          fontSize: !isMobile ? FONT_SIZES.TITLE : undefined,
+          color: PALLETTE.PINK,
+        }}
+      >
         <a href="\https://www.figma.com/design/puqMDPsDHkABzjVYkZlZm1/Todo-app?m=auto&t=39iyiQ2iu1EunUU1-6">
           Figma
         </a>
