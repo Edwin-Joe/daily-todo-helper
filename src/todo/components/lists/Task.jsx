@@ -1,8 +1,14 @@
-import { FONT_SIZES, PALLETTE, removeEntryById } from "todo/utils/utils.ts";
+import {
+  FONT_SIZES,
+  isMobileDevice,
+  PALLETTE,
+  removeEntryById,
+} from "todo/utils/utils.ts";
 import CustomRadioButton from "./CustomRadioButton";
 import { useState } from "react";
 
 const Task = ({ data, setData, label, isCompleted, id }) => {
+  const isMobile = isMobileDevice();
   const [checked, setChecked] = useState(isCompleted);
   return (
     <div
@@ -37,7 +43,7 @@ const Task = ({ data, setData, label, isCompleted, id }) => {
       >
         <span
           style={{
-            fontSize: FONT_SIZES.BUTTON_LABEL,
+            fontSize: !isMobile ? FONT_SIZES.BUTTON_LABEL : undefined,
             color: PALLETTE.LIGHT_PURPLE,
             fontFamily: "sans-serif",
             textAlign: "center",
@@ -53,7 +59,8 @@ const Task = ({ data, setData, label, isCompleted, id }) => {
             cursor: "pointer",
             height: "100%",
             paddingRight: "10px",
-            fontSize: FONT_SIZES.LABEL,
+            paddingLeft: "10px",
+            fontSize: !isMobile ? FONT_SIZES.LABEL : "15px",
             color: PALLETTE.PINK,
           }}
           onClick={() => {

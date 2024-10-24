@@ -2,6 +2,7 @@ import { useState } from "react";
 import {
   FONT_SIZES,
   IDS,
+  isMobileDevice,
   PALLETTE,
   playEnter,
   playError,
@@ -10,6 +11,7 @@ import {
 } from "../../utils/utils.ts";
 
 const AddTodo = ({ data, setData }) => {
+  const isMobile = isMobileDevice();
   const [addTodo, setAddTodo] = useState("");
   const [errors, setErrors] = useState(false);
 
@@ -29,12 +31,12 @@ const AddTodo = ({ data, setData }) => {
         style={{
           borderRadius: "20px",
           height: "40px",
-          width: "430px",
+          width: !isMobile ? "430px" : "250px",
           backgroundColor: PALLETTE.LIGHT_PURPLE,
           color: PALLETTE.DARK_PURPLE,
           fontSize: FONT_SIZES.TEXT_INPUT,
           fontFamily: "Arial, sans-serif",
-          padding: "10px",
+          padding: !isMobile ? "10px" : undefined,
           borderColor: errors ? PALLETTE.ERROR : undefined,
         }}
         value={addTodo}
@@ -56,8 +58,8 @@ const AddTodo = ({ data, setData }) => {
       <button
         style={{
           borderRadius: "20px",
-          height: "66px",
-          width: "75px",
+          height: !isMobile ? "66px" : "48px",
+          width: !isMobile ? "75px" : "48px",
           backgroundColor: PALLETTE.DARK_PURPLE,
         }}
         onClick={() => {
@@ -71,7 +73,10 @@ const AddTodo = ({ data, setData }) => {
         }}
       >
         <span
-          style={{ fontSize: FONT_SIZES.BUTTON_LABEL, color: PALLETTE.PINK }}
+          style={{
+            fontSize: !isMobile ? FONT_SIZES.MOBILE : undefined,
+            color: PALLETTE.PINK,
+          }}
         >
           Add
         </span>

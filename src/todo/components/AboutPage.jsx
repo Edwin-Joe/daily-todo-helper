@@ -1,10 +1,11 @@
-import { FONT_SIZES, PALLETTE } from "todo/utils/utils.ts";
+import { FONT_SIZES, isMobileDevice, PALLETTE } from "todo/utils/utils.ts";
 
 const AboutPage = ({ setShowAbout }) => {
+  const isMobile = isMobileDevice();
   return (
     <div
       style={{
-        width: "100%",
+        width: !isMobile ? " 100%" : "90%",
         height: "100%",
         backgroundColor: PALLETTE.PURPLE,
         display: "flex",
@@ -16,9 +17,9 @@ const AboutPage = ({ setShowAbout }) => {
         style={{
           textAlign: "center",
           marginBottom: "20px",
-          fontSize: FONT_SIZES.TITLE,
+          fontSize: !isMobile ? FONT_SIZES.TITLE : undefined,
           color: PALLETTE.PINK,
-          paddingTop: 100,
+          paddingTop: !isMobile ? 80 : 10,
         }}
       >
         I created this page as I wanted to make something to keep track of my
@@ -28,7 +29,7 @@ const AboutPage = ({ setShowAbout }) => {
         style={{
           textAlign: "center",
           marginBottom: "20px",
-          fontSize: FONT_SIZES.LABEL,
+          fontSize: !isMobile ? FONT_SIZES.LABEL : undefined,
           color: PALLETTE.PINK,
           paddingLeft: 50,
           paddingRight: 50,
@@ -47,9 +48,9 @@ const AboutPage = ({ setShowAbout }) => {
         style={{
           textAlign: "center",
           marginBottom: "20px",
-          fontSize: FONT_SIZES.TITLE,
+          fontSize: !isMobile ? FONT_SIZES.TITLE : undefined,
           color: PALLETTE.PINK,
-          paddingTop: 80,
+          paddingTop: !isMobile ? 80 : 10,
         }}
       >
         <a href="https://www.linkedin.com/in/edwin-joe-xavier/">My Linkedin</a>
@@ -58,9 +59,9 @@ const AboutPage = ({ setShowAbout }) => {
         style={{
           textAlign: "center",
           cursor: "pointer",
-          fontSize: FONT_SIZES.LABEL,
+          fontSize: !isMobile ? FONT_SIZES.LABEL : undefined,
           color: PALLETTE.PINK,
-          paddingTop: 80,
+          paddingTop: !isMobile ? 80 : 10,
         }}
         onClick={() => {
           setShowAbout(false);

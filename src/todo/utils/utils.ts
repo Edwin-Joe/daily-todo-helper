@@ -20,6 +20,7 @@ export enum FONT_SIZES {
   TITLE = 38,
   BUTTON_LABEL = 32,
   TEXT_INPUT = 25,
+  MOBILE = 30,
 }
 
 export enum IDS {
@@ -135,4 +136,8 @@ export const playError = () => {
 
 export const playDelete = () => {
   playAudio(delete_sound);
+};
+
+export const isMobileDevice = () => {
+  return /Mobi|Android/i.test(navigator.userAgent);
 };

@@ -1,10 +1,12 @@
+import { isMobileDevice } from "todo/utils/utils.ts";
 import Task from "./Task";
 
 const Todos = ({ data, setData }) => {
+  const isMobile = isMobileDevice();
   return (
     <div
       style={{
-        width: "30vw",
+        width: !isMobile ? "70vw" : "80%",
         display: "flex",
         justifyContent: "center",
         flexDirection: "column",

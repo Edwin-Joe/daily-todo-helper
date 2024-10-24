@@ -1,6 +1,8 @@
-import { FONT_SIZES, PALLETTE } from "../utils/utils.ts";
+import { FONT_SIZES, isMobileDevice, PALLETTE } from "../utils/utils.ts";
 
 const Header = ({ setShowAbout, showAbout }) => {
+  const isMobile = isMobileDevice();
+
   return (
     <div
       style={{
@@ -14,7 +16,7 @@ const Header = ({ setShowAbout, showAbout }) => {
     >
       <span
         style={{
-          fontSize: FONT_SIZES.HEADER,
+          fontSize: !isMobile ? FONT_SIZES.HEADER : FONT_SIZES.MOBILE,
           paddingLeft: "80px",
           color: PALLETTE.PINK,
         }}
@@ -25,10 +27,10 @@ const Header = ({ setShowAbout, showAbout }) => {
       <div style={{ paddingRight: "20px" }}>
         <button
           style={{
-            height: "60px",
-            width: "60px",
+            height: !isMobile ? "60px" : undefined,
+            width: !isMobile ? "60px" : undefined,
             borderRadius: "20px",
-            fontSize: FONT_SIZES.TITLE,
+            fontSize: !isMobile ? FONT_SIZES.TITLE : FONT_SIZES.MOBILE,
             backgroundColor: PALLETTE.PINK,
             color: PALLETTE.DARK_PURPLE,
           }}
