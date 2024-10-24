@@ -1,5 +1,13 @@
 import { useState } from "react";
-import { FONT_SIZES, IDS, PALLETTE, saveTodo } from "../../utils/utils.ts";
+import {
+  FONT_SIZES,
+  IDS,
+  PALLETTE,
+  playEnter,
+  playError,
+  playKeyboardPress,
+  saveTodo,
+} from "../../utils/utils.ts";
 
 const AddTodo = ({ data, setData }) => {
   const [addTodo, setAddTodo] = useState("");
@@ -31,6 +39,7 @@ const AddTodo = ({ data, setData }) => {
         }}
         value={addTodo}
         onInput={(event) => {
+          playKeyboardPress();
           setErrors(false);
           setAddTodo(event.target.value);
         }}
@@ -40,6 +49,7 @@ const AddTodo = ({ data, setData }) => {
               ? saveTodo(addTodo, data, setData)
               : setErrors(true);
             setAddTodo("");
+            playEnter();
           }
         }}
       />
@@ -55,7 +65,9 @@ const AddTodo = ({ data, setData }) => {
             ? saveTodo(addTodo, data, setData)
             : setErrors(true);
           setAddTodo("");
-          console.log(data);
+          if (addTodo.length < 1) {
+            playError();
+          }
         }}
       >
         <span

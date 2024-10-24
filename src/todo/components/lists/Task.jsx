@@ -1,4 +1,4 @@
-import { FONT_SIZES, PALLETTE } from "todo/utils/utils.ts";
+import { FONT_SIZES, PALLETTE, removeEntryById } from "todo/utils/utils.ts";
 import CustomRadioButton from "./CustomRadioButton";
 import { useState } from "react";
 
@@ -29,8 +29,10 @@ const Task = ({ data, setData, label, isCompleted, id }) => {
       <div
         style={{
           width: "100%",
+          height: "100%",
           display: "flex",
-          justifyContent: "center",
+          alignItems: "center",
+          justifyContent: "space-between",
         }}
       >
         <span
@@ -38,10 +40,26 @@ const Task = ({ data, setData, label, isCompleted, id }) => {
             fontSize: FONT_SIZES.BUTTON_LABEL,
             color: PALLETTE.LIGHT_PURPLE,
             fontFamily: "sans-serif",
+            textAlign: "center",
+            flex: 1,
           }}
         >
           {label}
         </span>
+        <div
+          style={{
+            cursor: "pointer",
+            height: "100%",
+            paddingRight: "10px",
+            fontSize: FONT_SIZES.LABEL,
+            color: PALLETTE.PINK,
+          }}
+          onClick={() => {
+            removeEntryById(id, data, setData);
+          }}
+        >
+          X
+        </div>
       </div>
     </div>
   );

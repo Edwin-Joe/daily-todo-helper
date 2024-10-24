@@ -1,6 +1,6 @@
 import React from "react";
 import "./CustomRadioButton.css";
-import { handleCheck } from "todo/utils/utils.ts";
+import { handleCheck, playEnter } from "todo/utils/utils.ts";
 
 const CustomRadioButton = ({ data, setData, id, isCompleted, setChecked }) => {
   return (
@@ -9,9 +9,9 @@ const CustomRadioButton = ({ data, setData, id, isCompleted, setChecked }) => {
         type="radio"
         checked={isCompleted}
         onClick={() => {
-          console.log("checked");
           handleCheck(data, setData, id);
           setChecked(!isCompleted);
+          !isCompleted && playEnter();
         }}
       />
       <span className="radio-checkmark"></span>

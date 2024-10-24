@@ -1,3 +1,9 @@
+import keyboard_press from "assets/sounds/keyboard_press.wav";
+import check from "assets/sounds/check.wav";
+import enter from "assets/sounds/enter.wav";
+import error from "assets/sounds/error.mp3";
+import delete_sound from "assets/sounds/delete.mp3";
+
 export const LSID = "TODOS";
 
 export enum PALLETTE {
@@ -54,6 +60,7 @@ export const encodeString = (arr) =>
     .join(",");
 
 export const saveTodo = (addTodo, data, setData) => {
+  playEnter();
   const todoId = `${addTodo}_${new Date().toISOString()}_${data?.length ?? 0}`;
   const result = data?.length
     ? [
@@ -94,4 +101,38 @@ export const setTodo = (result, setData) => {
   setData(result);
   const encodedString = encodeString(result);
   localStorage.setItem(LSID, encodedString);
+};
+
+export const removeEntryById = (id, data, setData) => {
+  setTodo(
+    data.filter((entry) => entry.id !== id),
+    setData
+  );
+  playDelete();
+};
+
+export const playAudio = (audio) => {
+  const sound = new Audio(audio);
+  sound.volume = 0.5;
+  sound.play();
+};
+
+export const playKeyboardPress = () => {
+  playAudio(keyboard_press);
+};
+
+export const playCheck = () => {
+  playAudio(check);
+};
+
+export const playEnter = () => {
+  playAudio(enter);
+};
+
+export const playError = () => {
+  playAudio(error);
+};
+
+export const playDelete = () => {
+  playAudio(delete_sound);
 };
