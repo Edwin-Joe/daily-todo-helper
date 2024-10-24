@@ -21,7 +21,10 @@ export enum IDS {
 }
 
 export const getTodos = () => {
-  const data = parseString(localStorage.getItem("TODOS") ?? "");
+  let data = [];
+  if (localStorage.getItem("TODOS")) {
+    data = parseString(localStorage.getItem("TODOS"));
+  }
   return data;
 };
 
@@ -68,6 +71,26 @@ export const saveTodo = (addTodo, data, setData) => {
           isCompleted: false,
         },
       ];
+  setTodo(result, setData);
+};
+
+export const handleCheck = (data, setData, id) => {
+  const todos = data;
+  if (Array.isArray(todos)) {
+    const updatedData = toggleCompletionById(data, id);
+    setTodo(updatedData, setData);
+  }
+};
+
+export const toggleCompletionById = (data, id) => {
+  const entry = data.find((entry) => entry.id === id);
+  if (entry) {
+    entry.isCompleted = !entry.isCompleted;
+  }
+  return data;
+};
+
+export const setTodo = (result, setData) => {
   setData(result);
   const encodedString = encodeString(result);
   localStorage.setItem(LSID, encodedString);

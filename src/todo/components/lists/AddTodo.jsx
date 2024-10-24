@@ -34,6 +34,14 @@ const AddTodo = ({ data, setData }) => {
           setErrors(false);
           setAddTodo(event.target.value);
         }}
+        onKeyDown={(event) => {
+          if (event.key === "Enter") {
+            addTodo.length > 1
+              ? saveTodo(addTodo, data, setData)
+              : setErrors(true);
+            setAddTodo("");
+          }
+        }}
       />
       <button
         style={{

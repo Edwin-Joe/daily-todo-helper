@@ -12,6 +12,7 @@ const TodoList = ({ data, setData }) => {
         alignItems: "center",
         paddingTop: "60px",
         flexDirection: "column",
+        paddingBottom: 16,
       }}
     >
       <AddTodo data={data} setData={setData} />
