@@ -1,4 +1,9 @@
-import { FONT_SIZES, isMobileDevice, PALLETTE } from "../utils/utils.ts";
+import {
+  FONT_SIZES,
+  isMobileDevice,
+  PALLETTE,
+  playDelete,
+} from "../utils/utils.ts";
 
 const Header = ({ setShowAbout, showAbout }) => {
   const isMobile = isMobileDevice();
@@ -35,6 +40,7 @@ const Header = ({ setShowAbout, showAbout }) => {
             color: PALLETTE.DARK_PURPLE,
           }}
           onClick={() => {
+            playDelete();
             setShowAbout(!showAbout);
           }}
         >

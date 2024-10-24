@@ -1,4 +1,9 @@
-import { FONT_SIZES, isMobileDevice, PALLETTE } from "todo/utils/utils.ts";
+import {
+  FONT_SIZES,
+  isMobileDevice,
+  PALLETTE,
+  playDelete,
+} from "todo/utils/utils.ts";
 
 const AboutPage = ({ setShowAbout }) => {
   const isMobile = isMobileDevice();
@@ -64,6 +69,7 @@ const AboutPage = ({ setShowAbout }) => {
           paddingTop: !isMobile ? 80 : 10,
         }}
         onClick={() => {
+          playDelete();
           setShowAbout(false);
         }}
       >
