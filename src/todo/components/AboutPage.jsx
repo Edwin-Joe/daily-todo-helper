@@ -58,7 +58,13 @@ const AboutPage = ({ setShowAbout }) => {
           paddingTop: !isMobile ? 80 : 10,
         }}
       >
-        <a href="https://www.linkedin.com/in/edwin-joe-xavier/">My Linkedin</a>
+        <a
+          href="https://www.linkedin.com/in/edwin-joe-xavier/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          My Linkedin
+        </a>
       </div>
       <div
         style={{
@@ -68,7 +74,11 @@ const AboutPage = ({ setShowAbout }) => {
           color: PALLETTE.PINK,
         }}
       >
-        <a href="\https://www.figma.com/design/puqMDPsDHkABzjVYkZlZm1/Todo-app?m=auto&t=39iyiQ2iu1EunUU1-6">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.figma.com/design/puqMDPsDHkABzjVYkZlZm1/Todo-app?m=auto&t=39iyiQ2iu1EunUU1-6"
+        >
           Figma
         </a>
       </div>
