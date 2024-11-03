@@ -26,7 +26,7 @@ const Header = ({ setShowAbout, showAbout }) => {
           color: PALLETTE.PINK,
         }}
       >
-        To-do-helper
+        To-do helper
       </span>
 
       <div style={{ paddingRight: "20px" }}>
