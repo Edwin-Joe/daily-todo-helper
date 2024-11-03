@@ -85,6 +85,22 @@ const AboutPage = ({ setShowAbout }) => {
       <div
         style={{
           textAlign: "center",
+          marginBottom: "20px",
+          fontSize: !isMobile ? FONT_SIZES.TITLE : undefined,
+          color: PALLETTE.PINK,
+        }}
+      >
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://github.com/Edwin-Joe/daily-todo-helper"
+        >
+          Github project link
+        </a>
+      </div>
+      <div
+        style={{
+          textAlign: "center",
           cursor: "pointer",
           fontSize: !isMobile ? FONT_SIZES.LABEL : undefined,
           color: PALLETTE.PINK,
